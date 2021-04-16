@@ -19,7 +19,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
-
+app.get("/posts/:post", (req, res) => {
+  
+  var tofind =req.params.post;
+  array.forEach((element)=>{
+      if(element.title === tofind){
+   console.log("Match found");
+  }
+  else{
+    console.log("Match not found")
+  }
+  });
+});
 
 //Home route
 app.get("/", (req, res) => {
